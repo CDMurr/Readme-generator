@@ -11,10 +11,23 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+
+// start returning data from questions 
+// add markdown styling
+// then make sure its writing to the file 
 function generateMarkdown(data) {
   return `# ${data.title}
 
 `;
 }
+
+
+
+// add more markdown like user story 
+const generatePage = (questions) => {
+  return ` ##User story 
+  ${questions.title}
+
+`}
 
 module.exports = generateMarkdown;
