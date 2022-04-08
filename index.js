@@ -85,17 +85,17 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             // console.log(answers)
-            generateMarkdown(answers)
+            writeToFile("README.md", answers)
             // console.log(generateMarkdown(answers))
         });
 };
 
 
 // Function call to initialize app
-init() 
-    inquirer.prompt(questions).then( res => {
-        writeToFile('README.md', generateMarkdown({ ...res}));
-    });
+init();
+    // inquirer.prompt(questions).then( res => {
+    //     writeToFile('README.md', generateMarkdown({ ...res}));
+    // });
 
 
 
