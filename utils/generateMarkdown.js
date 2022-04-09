@@ -18,8 +18,12 @@ function renderLicenseSection(license) {
 // add markdown styling
 // then make sure its writing to the file 
 function generateMarkdown(data) {
-  return `# ${data.title}
-
+  return `# ${data.title} 
+  ${data.github}
+  ${data.description}
+  ${data.license}
+  ${data.usage}
+  ${data.test}
 `
 }
 
@@ -32,4 +36,4 @@ function generateMarkdown(data) {
 
 // `}
 
-module.exports = {generateMarkdown, renderLicenseSection};
+module.exports = generateMarkdown

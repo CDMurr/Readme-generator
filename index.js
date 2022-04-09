@@ -2,10 +2,10 @@
 // * then right out the next thing you will work on when you get back into the material. 
 
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer") 
-const fs = require("fs") 
-const generateMarkdown = require("./utils/generateMarkdown")
-const path = require("path")
+const inquirer = require("inquirer"); 
+const fs = require("fs"); 
+const generateMarkdown = require("./utils/generateMarkdown");
+const path = require("path");
 
 
 
@@ -53,7 +53,7 @@ const questions = [{
     name: "license",
     message: "what license would you like",
     choices: ["MIT", "GNU GPLv3", "Mozilla Public License 2.0", "Apache License 2.0"]
-    // * does installation need to be a name instead of license? 
+    
 },{
     type: "input",
     name: "usage",
@@ -75,6 +75,8 @@ const questions = [{
 // TODO: Create a function to write README file
 // ** this is where the current issue is
 // need to npm install path .. import path 
+// ** consider making a variable where you stored as an empty array, then push that data to the array 
+// then for each item it appends the data 
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(__dirname, fileName), data);
 };
@@ -84,9 +86,19 @@ function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            // console.log(answers)
-            writeToFile("README.md", answers)
-            // console.log(generateMarkdown(answers))
+             console.log(answers)
+            const genMarkdown = generateMarkdown(answers)
+            writeToFile("README.md", genMarkdown)
+            // ** Look up what write fileSync does 
+        })
+        .catch((error) => {
+            if (error.isTtyError) {
+                //  Prompt couldnt be rendered in the current enviroment 
+
+            }else {
+                console.log(error)
+                // something went wrong 
+            }
         });
 };
 
