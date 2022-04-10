@@ -12,51 +12,47 @@ function renderLicenseSection(license) {
   return `# ${data.license}`
 }
 
-// TODO: Create a function to generate markdown for README
-
-// start returning data from questions 
-// add markdown styling
-// then make sure its writing to the file 
+// function to generate markdown for README
 function generateMarkdown(data) {
-  return ` ${data.title} 
+  return ` # ${data.title} 
 
   ## GitHub username: 
   ${data.github}@github.com
 
   ## Table of Contents
-  * [License](#License)
-  * [Usage](#Usage)
-  * [Email](#Email)
-  * [Future-Development](#Future-Development)
+  * [Description](#description)
+  * [License](#license)
+  * [Usage](#usage)
+  * [development](#development)
+  * [runcode](#runcode)
+  * [test](#test)
+  * [Email](#email)
   * [Link](#link)
   
-  ## Description
+  ## description
   ${data.description}
 
-  ## License
+  ## runcode
+  ${data.deploy}
+  
+  ## license
   ${data.license}
 
-  ## Usage
+  ## test
+  ${data.test}
+  
+  ## usage
   ${data.usage}
-
-  ## Email 
-  ${data.email}
-
-  ## Future Development 
+  
+  ## development 
   ${data.development}
+
+  ## email 
+  ${data.email}
 
   ## link 
   ${data.link}
 `
 }
-
-
-
-// add more markdown like user story 
-// const generatePage = (questions) => {
-//   return ` ##User story 
-//   ${questions.title}
-
-// `}
 
 module.exports = generateMarkdown

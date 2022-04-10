@@ -18,6 +18,10 @@ const questions = [{
     name: "description",
     message: "give a description of your project"
 },{
+    type: "input",
+    name: "deploy",
+    message: "how to execute code"  
+},{
     type: "list",
     name: "license",
     message: "what license would you like",
@@ -26,14 +30,23 @@ const questions = [{
     type: "input",
     name: "usage",
     message: "what is the application used for"
+      
 },{
     type: "input",
-    name: "email",
-    message: "what is the best contact email?"
+    name: "test",
+    message: "test used"
 },{
     type: "input",
     name: "development",
     message: "what will be added to project at a later date"
+},{
+    type: "input",
+    name: "email",
+    message: "what is the best contact email?"    
+},{
+    type: "input", 
+    name: "link",
+    message: "what is the github repo link for project?"
 }
 ];
 
