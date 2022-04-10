@@ -18,12 +18,35 @@ function renderLicenseSection(license) {
 // add markdown styling
 // then make sure its writing to the file 
 function generateMarkdown(data) {
-  return `# ${data.title} 
-  ${data.github}
+  return ` ${data.title} 
+
+  ## GitHub username: 
+  ${data.github}@github.com
+
+  ## Table of Contents
+  * [License](#License)
+  * [Usage](#Usage)
+  * [Email](#Email)
+  * [Future-Development](#Future-Development)
+  * [Link](#link)
+  
+  ## Description
   ${data.description}
+
+  ## License
   ${data.license}
+
+  ## Usage
   ${data.usage}
-  ${data.test}
+
+  ## Email 
+  ${data.email}
+
+  ## Future Development 
+  ${data.development}
+
+  ## link 
+  ${data.link}
 `
 }
 
